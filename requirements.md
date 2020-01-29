@@ -1,4 +1,4 @@
-# Unit 09 Node.js and ES6+ Homework: Developer Profile Generator
+# Unit 09 Node. and ES6+ Homework: Developer Profile Generator
 
 Create a command-line application that dynamically generates a PDF profile from a GitHub username. The application will be invoked with the following command:
 
@@ -10,12 +10,12 @@ The user will be prompted for a favorite color, which will be used as the backgr
 
 The PDF will be populated with the following:
 
-* Profile image
-* User name
+* Profile image --check
+* User name --check
 * Links to the following:
-  * User location via Google Maps
-  * User GitHub profile
-  * User blog
+  * User location via Google Maps -- got check
+  * User GitHub profile --check
+  * User blog --check
 * User bio
 * Number of public repositories
 * Number of followers
