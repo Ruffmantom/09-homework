@@ -17,10 +17,10 @@ The PDF will be populated with the following:
   * User GitHub profile --check
   * User blog --check
 * User bio
-* Number of public repositories
-* Number of followers
-* Number of GitHub stars
-* Number of users following
+* Number of public repositories --check
+* Number of followers --check
+* Number of GitHub stars --check
+* Number of users following --check
 
 Following the [common templates for user stories](https://en.wikipedia.org/wiki/User_story#Common_templates), we can frame this challenge as follows:
 

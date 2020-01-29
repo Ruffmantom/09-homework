@@ -27,7 +27,7 @@ promtUser()
         const color = data.color;
 
         const userUrl = `https://api.github.com/users/${username}`;
-        const reposUrl = `https://api.github.com/users/${username}/repos?per_page=100`;
+        const reposUrl = `https://api.github.com/users/${username}/starred`;
         //api call for the user info
         axios.get(userUrl)
             .then(function (res) {
@@ -51,9 +51,15 @@ promtUser()
                 const userBio = user.bio;
                 const repoNum = user.public_repos;
                 const followers = user.followers;
-                const staredRepos = user.starred_url.starred.length;
-                console.log(staredRepos);
+                const staredRepos = user.starred_url;
+                // console.log(staredRepos);
                 const following = user.following;
+            })
+        // api call for the repos
+        axios.get(reposUrl)
+            .then(function (starred) {
+
+                const starredNum = starred.data.length;
             })
 
     })
@@ -67,8 +73,4 @@ promtUser()
 
 // }
 // init();
- // api call for the repos
-//  axios.get(reposUrl)
-//  .then(function (repos) {
-     //fill in
-//  })
+
