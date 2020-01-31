@@ -61,11 +61,11 @@ promtUser()
                         const starredNum = starred.data.length;
                         const responseObj = [userImage, fullName, userName, locUrl, userLoc, gitPage, userBlog, userBio, repoNum, followers, following, starredNum, color]
                         console.log(responseObj);
-                        const test = htmlPage(responseObj);
+                        const genHTML = htmlPage(responseObj);
                         (async () => {
                             const browser = await puppeteer.launch();
                             const page = await browser.newPage();
-                            await page.setContent(test, { waitUntil: 'networkidle2' });
+                            await page.setContent(genHTML, { waitUntil: 'networkidle2' });
                             await page.pdf({
                                 path: 'resume.pdf',
                                 format: 'A4',

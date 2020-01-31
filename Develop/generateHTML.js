@@ -133,6 +133,7 @@ function generateHTML(data) {
          margin-top: 10px;
          }
          .container {
+         margin-top: 90px;
          padding: 50px;
          padding-left: 100px;
          padding-right: 100px;
@@ -174,20 +175,20 @@ function generateHTML(data) {
       </head>
         <body>
         <div class="jumbotron jumbotron-fluid">
-        <div class="container">
+        <div class="wrapper">
             <div class="photo-header">
                 <img src="${data[0]}" alt="user image">
                 <h1>Hi!</h1>
                 <h2>My name is ${data[1]}</h2>
                 <div class="links-nav">
                     <a class="nav-link" href="${data[3]}"><span><i
-                                class="fas fa-location-arrow"></i></span>${data[4]}</a>
-                    <a class="nav-link" href="${data[5]}"><span><i class="fab fa-github"></i></span>GitHub</a>
-                    <a class="nav-link" href="${data[6]}"><span><i class="fas fa-rss-square"></i></span>Portfolio</a>
+                                class="fas fa-location-arrow"></i></span> ${data[4]}</a>
+                    <a class="nav-link" href="${data[5]}"><span><i class="fab fa-github"></i></span> GitHub</a>
+                    <a class="nav-link" href="${data[6]}"><span><i class="fas fa-rss-square"></i></span> Portfolio</a>
                 </div>
 
             </div>
-            <main class="wrapper">
+            <main class="container" style="text-align: center;">
                 <h3>I built some things</h3>
                 <div class="row">
                     <div class="col">
