@@ -1,8 +1,9 @@
 var inquirer = require("inquirer");
 const axios = require("axios");
-// var pdf = require('html-pdf');
-var htmlPage = require("./generateHTML");
+const htmlPage = require("./generateHTML");
 const fs = require("fs");
+const util = require("util");
+const puppeteer = require('puppeteer')
 
 const questions = [
     {
@@ -51,26 +52,34 @@ promtUser()
                 const userBio = user.bio;
                 const repoNum = user.public_repos;
                 const followers = user.followers;
-                const staredRepos = user.starred_url;
+                // const staredRepos = user.starred_url;
                 // console.log(staredRepos);
                 const following = user.following;
-            })
-        // api call for the repos
-        axios.get(reposUrl)
-            .then(function (starred) {
+                // api call for the repos
+                axios.get(reposUrl)
+                    .then(function (starred) {
+                        const starredNum = starred.data.length;
+                        const responseObj = [userImage, fullName, userName, locUrl, userLoc, gitPage, userBlog, userBio, repoNum, followers, following, starredNum, color]
+                        console.log(responseObj);
+                        const test = htmlPage(responseObj);
+                        (async () => {
+                            const browser = await puppeteer.launch();
+                            const page = await browser.newPage();
+                            await page.setContent(test, { waitUntil: 'networkidle2' });
+                            await page.pdf({
+                                path: 'resume.pdf',
+                                format: 'A4',
+                                printBackground: true
+                            });
 
-                const starredNum = starred.data.length;
+                            await browser.close();
+                        })();
+                    })
             })
+
+
 
     })
 
-// function writeToFile('resume.pdf', data) {
-// need to figure out how to run the function from the other file
-        // htmlPage.generateHTML(data);
-// }
 
-// function init() {
-
-// }
-// init();
 
