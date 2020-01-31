@@ -1,4 +1,4 @@
-var inquirer = require("inquirer");
+const inquirer = require("inquirer");
 const axios = require("axios");
 const htmlPage = require("./generateHTML");
 const fs = require("fs");
@@ -60,7 +60,7 @@ promtUser()
                     .then(function (starred) {
                         const starredNum = starred.data.length;
                         const responseObj = [userImage, fullName, userName, locUrl, userLoc, gitPage, userBlog, userBio, repoNum, followers, following, starredNum, color]
-                        console.log(responseObj);
+                        // console.log(responseObj);
                         const genHTML = htmlPage(responseObj);
                         (async () => {
                             const browser = await puppeteer.launch();
@@ -73,12 +73,11 @@ promtUser()
                             });
 
                             await browser.close();
+                            console.log("Succsess!")
                         })();
+
                     })
             })
-
-
-
     })
 
 

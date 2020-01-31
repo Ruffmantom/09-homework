@@ -174,7 +174,7 @@ function generateHTML(data) {
       </style>
       </head>
         <body>
-        <div class="jumbotron jumbotron-fluid">
+        
         <div class="wrapper">
             <div class="photo-header">
                 <img src="${data[0]}" alt="user image">
@@ -214,7 +214,7 @@ function generateHTML(data) {
                 </div>
             </main>
         </div>
-    </div>
+   
         </body>
       </html>`
 }
